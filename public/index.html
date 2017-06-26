@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifdex</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_green-pink.min.css" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css" />-->
+    
+    <style type="text/css">
+      [v-cloak]
+      {
+        display: none;
+      }
+      
+      .custom-text-header
+      {
+        padding: 20px;
+        font-size: xx-large;
+        font-weight: bold;
+      }
+      
+      .gif-card
+      {
+        width: 230px;
+        height: 230px;
+        margin: 20px;
+        background-color: #ff4081;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center; 
+        display: inline-block;
+      }
+      
+      .gif-card-bottom
+      {
+        margin-top:180px;
+        height: 50px;
+        display: flex;
+        box-sizing: border-box;
+        align-items: flex-end;
+        color: white;
+        
+        background: rgba(0,0,0,0.2);
+        background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
+        background: -o-linear-gradient(bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%); 
+        background: -moz-linear-gradient(bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%); 
+        background: linear-gradient(bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
+      }
+      
+      .gif-input
+      {
+        -webkit-border-radius: 20px; 
+        -moz-border-radius: 20px; 
+        border-radius: 20px; 
+        
+        width: 200px;
+        width: -webkit-calc(100% - 56px);
+        width: -moz-calc(100% - 56px);
+        width: calc(100% - 56px);
+        
+        color: rgba(0,0,0,0.54);
+        margin: 0 20px 20px 20px;
+        padding: 8px;
+        background-color: transparent; 
+        border: rgba(255, 64, 129, 0.38) 1px solid;
+        
+        outline: none;
+      }
+      
+      .gif-input:focus
+      {
+        color: rgba(0,0,0,0.87);
+        border: rgba(255, 64, 129, 1) 1px solid;
+      }
+      
+      .gif-input::-webkit-input-placeholder
+      {
+        color: rgba(0,0,0,0.34);
+      }
+      .gif-input:-moz-placeholder
+      {
+        color: rgba(0,0,0,0.34);
+      }
+      .gif-input::-moz-placeholder
+      {
+        color: rgba(0,0,0,0.34);
+      }
+      .gif-input:-ms-input-placeholder
+      {
+        color: rgba(0,0,0,0.34);
+      }
+      .gif-input::-ms-input-placeholder
+      {
+        color: rgba(0,0,0,0.34);
+      }
+      
+      ::selection 
+      {
+        color: rgba(255,255,255,1);
+        background: #ff4081;
+      }
+
+      ::-moz-selection 
+      {
+        color: rgba(255,255,255,1);
+        background: #ff4081;
+      }
+      
+      .page-content
+      {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+   
+    <div id="root" v-cloak>
+     
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div>
+            <span class="custom-text-header mdl-layout-title">GIFDEX</span>
+          </div>
+          
+          <div>
+            <input id="searchGifInput" class="gif-input" type="text" placeholder="Search gifs here..." v-model="gifSearchTerm">
+          </div>
+          
+        </header>
+        <main class="mdl-layout__content">
+          <div class="page-content">
+           
+            <!-- the box to load -->
+            <gif-card v-for="gif in gifs" v-bind:key="gif.id" v-bind:gif-data="gif"></gif-card>
+            
+            <!-- the footer -->
+            <footer class="mdl-mega-footer">
+              <div class="mdl-mega-footer__bottom-section">
+                <div class="mdl-logo">Gifdex created by Miguel Carvalho</div>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">Github</a></li>
+                </ul>
+              </div>
+            </footer>
+            
+          </div>
+        </main>
+      </div>
+     
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script type="text/javascript" src="js/bundle.js"></script>
+  </body>
+</html>

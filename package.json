@@ -1,0 +1,20 @@
+{
+  "name": "gifdex",
+  "version": "0.0.3",
+  "description": "A .gif pokedex!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-build": "webpack --config webpack.config.js",
+    "webpack-build-run": "webpack --config webpack.config.js && node server.js",
+    "webpack-version": "webpack --version"
+  },
+  "author": "Miguel Carvalho",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
