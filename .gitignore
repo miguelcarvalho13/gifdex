@@ -56,3 +56,9 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#test
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4bd429a4f94e391a87a25f2422e8898336da4dbf
